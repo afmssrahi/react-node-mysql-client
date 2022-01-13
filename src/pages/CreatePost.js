@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 
 const CreatePost = () => {
@@ -16,9 +17,13 @@ const CreatePost = () => {
 		userName: Yup.string().min(3).max(25).required(),
 	});
 
+	const history = useHistory();
+
 	const handleSubmit = (data) => {
 		axios.post('http://localhost:5000/posts', data).then((response) => {
-			console.log('data insert successfully');
+			alert('data insert successfully');
+
+			history.push('/home');
 		});
 	};
 

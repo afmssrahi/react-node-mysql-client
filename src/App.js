@@ -7,7 +7,7 @@ import Home from './pages/Home';
 function App() {
 	return (
 		<div className='App'>
-			<h1 className='text-center'>CRUD Operation on MySql</h1>
+			<h1 className='text-center'>CRUD Operation on MySql via React</h1>
 			<Router>
 				<Header></Header>
 				<Switch>
